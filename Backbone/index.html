@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Backbone Js getting started</title>
+    <script>
+        var base_url = "http://localhost:2403"
+    </script>
 </head>
+
 <body>
-    
 
+<h1>Backbone JS basic stuff</h1>
+<hr>
+<div id="app">
 
-
+</div>
 
     <!--Script Declarations-->
     <script src="/node_modules/underscore/underscore-min.js"></script>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="/node_modules/backbone/backbone-min.js"></script>
+    <script src="/node_modules/backbone/backbone-min.js"></script>
 
-<!--Comman-->
-<script src="/common/commonfunc.js"></script>
+    <!--Comman-->
+    <script src="/common/commonfunc.js"></script>
 
-<!--Models -->
-<script src="/models/user.js"></script>
+    <script src="/models/views.js"></script>
+
+    <!--Models -->
+    <script src="/models/user.js"></script>
 
 
 
-<script>
 
-    var u = new User();
-    u.on("change" , () => {
-         console.log(u.isValid() , u.validationError)})
-         u.set("username" , "");
-  
-         u.set("username" , "Darshan");
-    u.set("password" , "val@123"); 
-</script>
+
+
+    <script id="welcome-tmpl" type="text/x-backbone">
+    
+        <h1>Hello world</h1>
+
+        <%= length %>
+    </script>
+
+
+    <script>
+   
+        users.fetch();
+            
+        var app= new UserListView({el : "#app" , collection : users});
+        app.render();
+       
+    </script>
 </body>
+
 </html>
