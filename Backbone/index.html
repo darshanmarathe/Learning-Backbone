@@ -16,5 +16,24 @@
     <script src="/node_modules/underscore/underscore-min.js"></script>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="/node_modules/backbone/backbone-min.js"></script>
+
+<!--Comman-->
+<script src="/common/commonfunc.js"></script>
+
+<!--Models -->
+<script src="/models/user.js"></script>
+
+
+
+<script>
+
+    var u = new User();
+    u.on("change" , () => {
+         console.log(u.isValid() , u.validationError)})
+         u.set("username" , "");
+  
+         u.set("username" , "Darshan");
+    u.set("password" , "val@123"); 
+</script>
 </body>
 </html>
